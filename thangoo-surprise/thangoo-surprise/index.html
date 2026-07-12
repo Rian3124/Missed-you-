@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hi Thangoo 🩵</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- LOADING SCREEN -->
+
+<div id="loader">
+
+<img src="assets/butterfly.png">
+
+<p>
+Preparing a little surprise for you...🦋
+</p>
+
+</div>
+
+
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop>
+
+<source src="assets/music.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+
+<!-- SCENE 1 -->
+
+<section id="scene1" class="scene active">
+
+
+<div class="stars"></div>
+
+
+<img src="assets/butterfly.png"
+class="butterfly">
+
+
+<div class="intro">
+
+
+<h1>
+Hi Thangoo🩵...
+</h1>
+
+
+<p>
+
+Someone has been waiting<br>
+to tell you something...
+
+</p>
+
+
+<p class="touch">
+
+Touch anywhere...
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- SCENE 2 -->
+
+<section id="scene2" class="scene">
+
+
+<div id="sparkles"></div>
+
+
+<img src="assets/butterfly.png"
+class="fingerButterfly">
+
+
+<div class="finger">
+
+☝️
+
+</div>
+
+
+
+<div class="jar" id="jar">
+
+
+<img src="assets/jar.png">
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- SCENE 3 -->
+
+<section id="scene3" class="scene">
+
+
+<div class="messageBox">
+
+
+<img src="assets/butterfly.png"
+class="smallButterfly">
+
+
+
+<p id="messageText"></p>
+
+
+
+<button id="nextMessage">
+
+Next 🦋
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- SCENE 4 -->
+
+
+<section id="scene4" class="scene">
+
+
+<div class="fullJar">
+
+
+<img src="assets/jar.png">
+
+</div>
+
+
+
+<div class="flyingButterflies">
+
+
+<img src="assets/butterfly.png">
+<img src="assets/butterfly.png">
+<img src="assets/butterfly.png">
+<img src="assets/butterfly.png">
+<img src="assets/butterfly.png">
+
+
+</div>
+
+
+
+<p class="fadeText">
+
+
+Every little moment with you<br>
+
+became a beautiful memory ❤️
+
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- SCENE 5 -->
+
+
+<section id="scene5" class="scene">
+
+
+<div class="question">
+
+
+<img src="assets/butterfly.png"
+class="lastButterfly">
+
+
+<h1>
+
+Do you miss me? ❤️
+
+</h1>
+
+
+
+<button id="yesBtn">
+
+YES 💙
+
+</button>
+
+
+
+<button id="noBtn">
+
+NO 🤍
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- SCENE 6 -->
+
+
+<section id="scene6" class="scene">
+
+
+<div class="ending">
+
+
+<h1>
+
+Hehe... I knew it 🤭
+
+</h1>
+
+
+
+<div class="magic">
+
+❤️ ✨ 🦋 🎉 🫂
+
+</div>
+
+
+
+<p>
+
+
+See you soon...🤗🫂
+
+
+<br><br>
+
+
+Love,
+
+
+<br>
+
+
+<b>
+
+Thangapulla❤️
+
+</b>
+
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+  </html>
+  *{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+height:100vh;
+overflow:hidden;
+
+font-family:"Georgia",serif;
+
+background:#020617;
+
+color:white;
+
+}
+
+
+
+.scene{
+
+display:none;
+
+height:100vh;
+width:100%;
+
+position:absolute;
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+
+
+.scene.active{
+
+display:block;
+
+}
+
+
+
+
+
+/* LOADER */
+
+
+#loader{
+
+position:fixed;
+
+z-index:9999;
+
+height:100vh;
+width:100%;
+
+background:#020617;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:20px;
+
+transition:2s;
+
+}
+
+
+
+#loader img{
+
+width:120px;
+
+animation:wing .5s infinite alternate;
+
+}
+
+
+
+#loader.fade{
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+
+
+
+
+
+/* SCENE 1 */
+
+
+#scene1{
+
+background:
+linear-gradient(#020617,#172554);
+
+}
+
+
+
+.stars{
+
+position:absolute;
+
+height:100%;
+width:100%;
+
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px);
+
+
+background-size:40px 40px;
+
+
+animation:twinkle 3s infinite alternate;
+
+}
+
+
+
+
+
+.intro{
+
+position:absolute;
+
+top:38%;
+
+width:100%;
+
+animation:fade 3s;
+
+}
+
+
+
+.intro h1{
+
+font-size:45px;
+
+color:#cffafe;
+
+text-shadow:
+
+0 0 20px cyan;
+
+}
+
+
+
+.intro p{
+
+font-size:22px;
+
+}
+
+
+
+.touch{
+
+animation:pulse 2s infinite;
+
+margin-top:40px;
+
+}
+
+
+
+
+
+
+
+/* BUTTERFLY */
+
+
+.butterfly{
+
+position:absolute;
+
+width:120px;
+
+left:-150px;
+
+top:50%;
+
+
+filter:
+
+drop-shadow(0 0 25px cyan);
+
+
+
+animation:
+
+fly 10s linear infinite,
+wing .5s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes fly{
+
+
+0%{
+
+left:-150px;
+top:55%;
+
+}
+
+
+50%{
+
+left:50%;
+top:35%;
+
+}
+
+
+100%{
+
+left:110%;
+top:55%;
+
+}
+
+
+}
+
+
+
+
+
+@keyframes wing{
+
+from{
+
+transform:rotateY(0deg);
+
+}
+
+to{
+
+transform:rotateY(45deg);
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+/* SCENE 2 */
+
+
+#scene2{
+
+background:
+
+radial-gradient(circle,#1e40af,#020617);
+
+}
+
+
+
+.fingerButterfly{
+
+position:absolute;
+
+width:110px;
+
+left:45%;
+top:35%;
+
+
+filter:
+
+drop-shadow(0 0 30px cyan);
+
+
+
+animation:
+
+land 4s ease;
+
+}
+
+
+
+@keyframes land{
+
+
+0%{
+
+left:-100px;
+opacity:0;
+
+}
+
+
+100%{
+
+left:50%;
+opacity:1;
+
+}
+
+}
+
+
+
+
+.finger{
+
+font-size:70px;
+
+position:absolute;
+
+bottom:25%;
+
+left:47%;
+
+}
+
+
+
+.jar{
+
+position:absolute;
+
+bottom:15%;
+
+left:40%;
+
+opacity:1;
+
+}
+
+
+
+.jar img{
+
+width:170px;
+
+filter:
+
+drop-shadow(0 0 40px cyan);
+
+animation:
+
+glow 2s infinite;
+
+}
+
+
+
+
+
+
+
+
+/* SCENE 3 */
+
+
+.messageBox{
+
+
+position:absolute;
+
+top:18%;
+
+left:7%;
+right:7%;
+
+
+padding:25px;
+
+
+background:
+
+rgba(255,255,255,.12);
+
+
+border-radius:25px;
+
+
+backdrop-filter:blur(10px);
+
+
+box-shadow:
+
+0 0 30px rgba(103,232,249,.5);
+
+
+}
+
+
+
+.smallButterfly{
+
+width:80px;
+
+}
+
+
+
+#messageText{
+
+font-size:21px;
+
+line-height:1.6;
+
+}
+
+
+
+
+button{
+
+border:none;
+
+border-radius:30px;
+
+padding:12px 25px;
+
+font-size:18px;
+
+cursor:pointer;
+
+margin:15px;
+
+}
+
+
+
+
+
+
+
+/* SCENE 4 */
+
+
+.fullJar img{
+
+margin-top:15%;
+
+width:200px;
+
+filter:
+
+drop-shadow(0 0 50px cyan);
+
+}
+
+
+
+
+.flyingButterflies img{
+
+width:70px;
+
+margin:15px;
+
+
+animation:
+
+float 3s infinite alternate;
+
+}
+
+
+
+.fadeText{
+
+font-size:25px;
+
+}
+
+
+
+
+
+
+
+
+/* SCENE 5 */
+
+
+.question{
+
+padding-top:18%;
+
+}
+
+
+
+.lastButterfly{
+
+width:120px;
+
+filter:
+
+drop-shadow(0 0 30px cyan);
+
+animation:
+
+float 3s infinite;
+
+}
+
+
+
+.question h1{
+
+font-size:40px;
+
+color:#fbcfe8;
+
+}
+
+
+
+#yesBtn{
+
+background:#60a5fa;
+
+color:white;
+
+box-shadow:
+
+0 0 25px #60a5fa;
+
+}
+
+
+
+#noBtn{
+
+background:white;
+
+position:absolute;
+
+}
+
+
+
+
+
+
+
+
+/* SCENE 6 */
+
+
+.ending{
+
+padding-top:25%;
+
+animation:fade 3s;
+
+}
+
+
+
+.magic{
+
+font-size:70px;
+
+animation:float 2s infinite;
+
+}
+
+
+
+.ending p{
+
+font-size:28px;
+
+line-height:1.6;
+
+}
+
+
+
+.ending b{
+
+color:#fda4af;
+
+font-size:35px;
+
+}
+
+
+
+
+
+
+
+
+
+/* EFFECTS */
+
+
+.sparkle{
+
+position:absolute;
+
+font-size:25px;
+
+animation:
+
+sparkleMove 2s infinite;
+
+}
+
+
+
+.heart{
+
+position:absolute;
+
+font-size:30px;
+
+animation:
+
+heartFly 2s forwards;
+
+}
+
+
+
+
+
+@keyframes sparkleMove{
+
+
+50%{
+
+transform:translateY(-40px);
+
+opacity:.3;
+
+}
+
+}
+
+
+
+@keyframes heartFly{
+
+
+to{
+
+transform:
+
+translateY(-200px);
+
+opacity:0;
+
+}
+
+}
+
+
+
+@keyframes glow{
+
+
+50%{
+
+filter:
+
+drop-shadow(0 0 60px cyan);
+
+}
+
+}
+
+
+
+
+@keyframes float{
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
+
+@keyframes pulse{
+
+
+50%{
+
+opacity:.5;
+
+}
+
+}
+
+
+
+@keyframes twinkle{
+
+
+from{
+
+opacity:.3;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+@keyframes fade{
+
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:600px){
+
+
+.intro h1{
+
+font-size:36px;
+
+}
+
+
+.intro p{
+
+font-size:18px;
+
+}
+
+
+
+#messageText{
+
+font-size:18px;
+
+}
+
+
+.question h1{
+
+font-size:32px;
+
+}
+
+
+
+.magic{
+
+font-size:50px;
+
+}
+
+
+
+.ending p{
+
+font-size:22px;
+
+}
+
+
+}
+// =============================
+// THANGOO SURPRISE WEBSITE
+// FINAL SCRIPT
+// =============================
+
+
+
+let currentScene = 1;
+
+let messageIndex = 0;
+
+let musicStarted = false;
+
+
+
+const music =
+document.getElementById("bgMusic");
+
+
+
+
+
+// LOADING SCREEN
+
+window.addEventListener("load",()=>{
+
+
+setTimeout(()=>{
+
+
+document
+.getElementById("loader")
+.classList.add("fade");
+
+
+},2500);
+
+
+
+});
+
+
+
+
+
+
+
+
+// CHANGE SCENE FUNCTION
+
+
+function showScene(number){
+
+
+document
+.querySelectorAll(".scene")
+.forEach(scene=>{
+
+scene.classList.remove("active");
+
+});
+
+
+
+document
+.getElementById("scene"+number)
+.classList.add("active");
+
+
+
+currentScene = number;
+
+
+}
+
+
+
+
+
+
+
+
+
+// FIRST TOUCH
+
+
+document.body.addEventListener("click",()=>{
+
+
+
+if(!musicStarted){
+
+
+music.play()
+.catch(()=>{});
+
+
+musicStarted=true;
+
+
+}
+
+
+
+if(currentScene===1){
+
+
+createSparkles();
+
+
+showScene(2);
+
+
+
+setTimeout(()=>{
+
+
+document
+.getElementById("jar")
+.style.opacity="1";
+
+
+},2500);
+
+
+
+setTimeout(()=>{
+
+
+showScene(3);
+
+showMessage();
+
+
+},5000);
+
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// FIVE MESSAGES
+
+
+const messages=[
+
+
+
+`I don't say this enough… but you make my life complete ❤️
+
+You make the normal days feel special… just by being there ✨
+
+I know I mess up sometimes… and I'm really sorry for that 🥺
+
+But no matter what… I always choose you ❤️
+
+And today… I just want to see you smile 😊`,
+
+
+
+
+
+`Thanks for turning this introvert into someone who can actually talk to anyone easily 😁`,
+
+
+
+
+
+
+`Half the time I asked for lunch or outing… was just to spend a little more time with you 🤷‍♀️`,
+
+
+
+
+
+`You are the first boy I ever spoke this much with… ❣️
+
+THANKYOUUU for coming into my life like an angel 🔮😘
+
+Thanks for standing beside me through all the situations and toughest times 😭🫶`,
+
+
+
+
+
+
+`I didn't want you to go that far just to buy me a gift.
+
+I just wanted you to be with me...
+
+But I'm happy knowing that I can make a sacrifice for your happiness 😜`
+
+];
+
+
+
+
+
+
+
+
+
+
+// TYPEWRITER EFFECT
+
+
+function showMessage(){
+
+
+let text =
+document.getElementById("messageText");
+
+
+text.innerHTML="";
+
+
+
+let message =
+messages[messageIndex];
+
+
+
+let i=0;
+
+
+
+let timer =
+setInterval(()=>{
+
+
+text.innerHTML += message[i];
+
+
+i++;
+
+
+
+if(i>=message.length){
+
+
+clearInterval(timer);
+
+
+}
+
+
+
+},35);
+
+
+
+}
+
+
+
+
+
+
+
+
+// NEXT BUTTON
+
+
+document
+.getElementById("nextMessage")
+.addEventListener("click",()=>{
+
+
+
+messageIndex++;
+
+
+
+if(messageIndex < messages.length){
+
+
+showMessage();
+
+
+}
+
+else{
+
+
+showScene(4);
+
+
+
+setTimeout(()=>{
+
+
+showScene(5);
+
+
+},5000);
+
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// SPARKLES
+
+
+function createSparkles(){
+
+
+
+for(let i=0;i<30;i++){
+
+
+let sparkle =
+document.createElement("div");
+
+
+
+sparkle.className="sparkle";
+
+sparkle.innerHTML="✨";
+
+
+
+sparkle.style.left =
+Math.random()*100+"%";
+
+
+
+sparkle.style.top =
+Math.random()*100+"%";
+
+
+
+document
+.getElementById("scene2")
+.appendChild(sparkle);
+
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+// NO BUTTON ESCAPE 😂
+
+
+const noButton =
+document.getElementById("noBtn");
+
+
+
+noButton.addEventListener("mouseover",()=>{
+
+
+
+let x =
+Math.random()*70;
+
+
+let y =
+Math.random()*70;
+
+
+
+noButton.style.transform =
+`translate(${x}vw,${y}vh)`;
+
+
+});
+
+
+
+
+
+
+
+
+
+// YES BUTTON
+
+
+document
+.getElementById("yesBtn")
+.addEventListener("click",()=>{
+
+
+
+createHearts();
+
+
+setTimeout(()=>{
+
+
+showScene(6);
+
+
+
+},1500);
+
+
+
+});
+
+
+
+
+
+
+
+
+// FINAL HEART EFFECT
+
+
+function createHearts(){
+
+
+
+for(let i=0;i<50;i++){
+
+
+
+let heart =
+document.createElement("div");
+
+
+
+heart.className="heart";
+
+
+
+heart.innerHTML=
+["❤️","✨","🦋","🎉"][
+
+Math.floor(Math.random()*4)
+
+];
+
+
+
+heart.style.left =
+Math.random()*100+"vw";
+
+
+
+heart.style.top =
+Math.random()*100+"vh";
+
+
+
+document
+.body
+.appendChild(heart);
+
+
+
+}
+
+
+}
