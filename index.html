@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missed You 🫂</title>
 
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#0f172a,#3b0764);
+color:white;
+overflow:hidden;
+text-align:center;
+}
+
+h1{margin-top:40px;font-size:40px;}
+p{font-size:20px;padding:0 20px;}
+
+#card{
+display:none;
+margin:30px auto;
+width:85%;
+max-width:500px;
+background:rgba(255,255,255,.15);
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+button{
+padding:12px 25px;
+font-size:20px;
+border:none;
+border-radius:30px;
+margin:10px;
+cursor:pointer;
+}
+
+#yes{background:#ff4fa3;color:white;}
+#no{background:white;}
+
+.heart{
+position:absolute;
+font-size:22px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-120vh);}
+}
+
+.butterfly{
+font-size:45px;
+cursor:pointer;
+animation:fly 3s infinite alternate ease-in-out;
+}
+
+@keyframes fly{
+from{transform:translateX(-80px);}
+to{transform:translateX(80px);}
+}
+
+#final{
+display:none;
+font-size:24px;
+padding:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🦋 Missed You 🫂</h1>
+
+<p>Hi Thangoo🩵<br>
+Touch the butterfly to begin...</p>
+
+<div class="butterfly" onclick="next()">🦋</div>
+
+<div id="card"></div>
+
+<div id="question" style="display:none;">
+<h2>Do you miss me? 🤣</h2>
+
+<button id="yes" onclick="yes()">YES 💙</button>
+<button id="no">NO 🤍</button>
+</div>
+
+<div id="final"></div>
+
+<script>
+
+const messages=[
+`❤️ I don't say this enough… but you make my life complete.<br><br>
+You make the normal days feel special… just by being there. ✨<br><br>
+I know I mess up sometimes… and I'm really sorry for that. 🥺<br><br>
+But no matter what… I always choose you. ❤️<br><br>
+Today… I just want to see you smile 😊`,
+
+`😁 Thanks for turning this introvert into someone who can actually talk to anyone easily. 🫶`,
+
+`🤷‍♀️ Half the time I asked for lunch or outing… was just to spend a little more time with you. ❤️`,
+
+`❣️ You are the first boy I ever spoke this much with.<br><br>
+THANKYOUUU for coming into my life like an angel. 🔮😘<br><br>
+Thanks for standing beside me through all the situations and toughest times.😭🫶`,
+
+`❤️ I didn't want you to go that far just to buy me a gift.<br><br>
+I just wanted you to be with me...<br><br>
+But I'm happy knowing that I can make a sacrifice for your happiness. 😜`
+];
+
+let i=0;
+
+function next(){
+
+let card=document.getElementById("card");
+card.style.display="block";
+
+if(i<messages.length){
+card.innerHTML=messages[i];
+i++;
+}
+else{
+card.style.display="none";
+document.querySelector(".butterfly").style.display="none";
+document.getElementById("question").style.display="block";
+}
+
+}
+
+const no=document.getElementById("no");
+
+no.onmouseover=function(){
+this.style.position="absolute";
+this.style.left=Math.random()*80+"%";
+this.style.top=Math.random()*80+"%";
+}
+
+function yes(){
+
+document.getElementById("question").style.display="none";
+
+for(let i=0;i<50;i++){
+
+let h=document.createElement("div");
+
+h.innerHTML=Math.random()>0.5?"💖":"🫂";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(h);
+
+}
+
+document.getElementById("final").style.display="block";
+
+document.getElementById("final").innerHTML=`
+
+<h1>💖 Hehe... I knew it! 🤭</h1>
+
+<h2>See you soon... 🤗🫣</h2>
+
+<p>
+
+No matter how busy life gets...<br><br>
+
+You'll always be my favorite person to miss.🩵<br><br>
+
+<b>Love,<br>Thangapulla ❤️</b>
+
+</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
